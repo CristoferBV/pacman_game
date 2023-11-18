@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import Model.PacManView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="scenePrincipal" prefHeight="600.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+    <children>
+      <Pane prefHeight="600.0" prefWidth="245.0" style="-fx-background-color: #F3B61D;">
+         <children>
+            <Label fx:id="scoreLabel" layoutX="89.0" layoutY="559.0" style="-fx-font-size: 150%; -fx-text-fill: white" text="Score" />
+            <Label fx:id="gameOverLabel" layoutX="63.0" layoutY="22.0" style="-fx-font-size: 150%; -fx-text-fill: white" text="isGameOver" />
+            <Label fx:id="levelLabel" layoutX="91.0" layoutY="107.0" style="-fx-font-size: 150%; -fx-text-fill: white" text="Level" />
+                 <Label layoutX="20.0" layoutY="460.0" prefHeight="24.0" prefWidth="209.0" style="-fx-font-size: 140%; -fx-text-fill: white" text="Move: arrow keys / New game: G" />
+         </children>
+      </Pane>
+        <BorderPane layoutX="245.0" prefHeight="600.0" prefWidth="577.0" style="-fx-background-color: black;">
+            <center>
+                <PacManView fx:id="pacManView" rowCount="21" columnCount="19" />
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

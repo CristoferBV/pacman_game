@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="escenaPrincipal" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MenuController">
+   <children>
+      <Pane fx:id="escenaMenu" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: linear-gradient(#F8BF05, #e74c3c);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="48.0" layoutY="31.0" prefHeight="76.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(#F8BF05, #e74c3c); -fx-background-radius: 10;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="48.0" layoutY="20.0" text="PacMan Game's" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="72.0" layoutY="170.0" prefHeight="373.0" prefWidth="252.0" style="-fx-background-color: linear-gradient(#F8BF05, #e74c3c); -fx-background-radius: 10;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <ToggleButton layoutX="51.0" layoutY="184.0" mnemonicParsing="false" onAction="#viewLevels" styleClass="toggleButtonInicio" stylesheets="@../Other/menuGame.css" text="NIVELES">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ToggleButton>
+                  <ToggleButton layoutX="51.0" layoutY="255.0" mnemonicParsing="false" onAction="#instructionsGame" styleClass="toggleButtonInicio" stylesheets="@../Other/menuGame.css" text="INSTRUCCIONES">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ToggleButton>
+                  <ToggleButton layoutX="51.0" layoutY="110.0" mnemonicParsing="false" onAction="#newGame" styleClass="toggleButtonInicio" stylesheets="@../Other/menuGame.css" text="PARTIDA">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ToggleButton>
+                  <Label layoutX="91.0" layoutY="30.0" text="Menu" textFill="WHITE">
+                     <font>
+                        <Font name="Consolas Bold" size="25.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Label>
+               </children>
+            </Pane>
+         </children></Pane>
+   </children>
+</AnchorPane>
