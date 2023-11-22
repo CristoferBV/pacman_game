@@ -26,9 +26,9 @@ public class Controller implements EventHandler<KeyEvent> {
     @FXML private Label gameOverLabel;
     @FXML private Label lifeLabel;
     @FXML private AnchorPane scenePrincipal;
-    private PacManModel pacManModel;
-    @FXML
-    private PacManView pacManView;
+    @FXML private PacManView pacManView;
+    
+    
     private static final String[] levelFiles = {
         "src/levels/level1.txt",
         "src/levels/level2.txt",
@@ -41,7 +41,8 @@ public class Controller implements EventHandler<KeyEvent> {
         "src/levels/level9.txt",
         "src/levels/level10.txt"
     };
-
+    
+    private PacManModel pacManModel;
     private Timer timer;
     private static int ghostEatingModeCounter;
     private boolean paused;
