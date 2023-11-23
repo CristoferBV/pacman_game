@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import App.Main;
 
 /**
  * FXML Controller class
@@ -48,7 +49,9 @@ public class MenuController implements Initializable {
     }
 
     @FXML
-    private void viewLevels(ActionEvent event) {
+    private void viewLevels(ActionEvent event) throws IOException {
+        Main.Close((Stage) escenaPrincipal.getScene().getWindow());
+        Main.setRoot("/View/Niveles", 1000, 600);
     }
 
     @FXML

@@ -65,4 +65,36 @@
     -fx-scale-y: 1.03;
 }
 
+.toggleButtonNiveles{
+    -fx-background-color: white; 
+    -fx-text-fill: black; 
+    -fx-font-size: 10px; 
+    -fx-font-weight: bold; 
+    -fx-pref-width: 70px; 
+    -fx-pref-height: 20px; 
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.toggleButtonNiveles:hover{
+    -fx-scale-x: 1.1; 
+    -fx-scale-y: 1.1;
+}
+
+.toggleButtonSalir{
+    -fx-background-color: white; 
+    -fx-text-fill: black; 
+    -fx-font-size: 12px; 
+    -fx-font-weight: bold; 
+    -fx-pref-width: 58px; 
+    -fx-pref-height: 58px; 
+    -fx-background-radius: 90px;
+    -fx-cursor: hand;
+}
+
+.toggleButtonSalir:hover{
+    -fx-scale-x: 1.1; 
+    -fx-scale-y: 1.1;
+}
+
 
