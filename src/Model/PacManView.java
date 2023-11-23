@@ -68,7 +68,7 @@ public class PacManView extends Group {
      *
      * @param model
      */
-    public void update(PacManModel model) {
+    public void actualizar(PacManModel model) {
         assert model.getRowCount() == this.rowCount && model.getColumnCount() == this.columnCount;
         //para cada ImageView, configura la imagen para que se corresponda con el CellValue de esa celda
         for (int row = 0; row < this.rowCount; row++){

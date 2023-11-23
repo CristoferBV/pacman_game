@@ -62,7 +62,7 @@ public class Controller implements EventHandler<KeyEvent> {
     public void initialize() {
         String file = this.getLevelFile(0);
         this.pacManModel = new PacManModel();
-        this.update(PacManModel.Direction.NONE);
+        this.actualizar(PacManModel.Direction.NONE);
         ghostEatingModeCounter = 25;
         this.startTimer();
         
@@ -85,7 +85,7 @@ public class Controller implements EventHandler<KeyEvent> {
             public void run() {
                 Platform.runLater(new Runnable() {
                     public void run() {
-                        update(pacManModel.getCurrentDirection());
+                        actualizar(pacManModel.getCurrentDirection());
                     }
                 });
             }
@@ -99,9 +99,9 @@ public class Controller implements EventHandler<KeyEvent> {
      * Muestra el PacManModel, actualiza la vista, actualiza la puntuación y el nivel, muestra Game Over/You Won e instrucciones sobre cómo jugar.
      * @param direction la dirección ingresada más recientemente para que PacMan se mueva
      */
-    private void update(PacManModel.Direction direction) {
-        this.pacManModel.step(direction);
-        this.pacManView.update(pacManModel);
+    private void actualizar(PacManModel.Direction direction) {
+        this.pacManModel.paso(direction);
+        this.pacManView.actualizar(pacManModel);
         this.scoreLabel.setText(String.format("Score: %d", this.pacManModel.getScore()));
         this.levelLabel.setText(String.format("Level: %d", this.pacManModel.getLevel()));
         this.lifeLabel.setText(String.format("Lives: %d", this.pacManModel.getLives()));
@@ -125,9 +125,9 @@ public class Controller implements EventHandler<KeyEvent> {
     /**
     * Lógica común para reiniciar el juego.
     */
-    private void resetGameLogic() {
+    private void restablecerGameLogic() {
         pause();
-        this.pacManModel.startNewGame();
+        this.pacManModel.empezarNuevoJuego();
         this.gameOverLabel.setText("");
         paused = false;
         this.startTimer();
@@ -158,7 +158,7 @@ public class Controller implements EventHandler<KeyEvent> {
                 direction = PacManModel.Direction.DOWN;
                 break;
             case G:
-                resetGameLogic();
+                restablecerGameLogic();
                 break;
             default:
                 keyRecognized = false;
@@ -181,7 +181,7 @@ public class Controller implements EventHandler<KeyEvent> {
     @FXML
     private void resetGame(ActionEvent event) {
         pacManModel.stopGame();
-        resetGameLogic();
+        restablecerGameLogic();
         scenePrincipal.requestFocus(); // Cambiar el foco del teclado al área principal
         pacManModel.setCurrentDirection(PacManModel.Direction.NONE);
     }
@@ -215,8 +215,7 @@ public class Controller implements EventHandler<KeyEvent> {
         return ghostEatingModeCounter;
     }
 
-    public static String getLevelFile(int x)
-    {
+    public static String getLevelFile(int x){
         return levelFiles[x];
     }
 
