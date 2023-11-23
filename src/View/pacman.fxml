@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.Label?>
 <?import Model.PacManView?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,10 +14,10 @@
          <children>
             <Pane layoutX="21.0" layoutY="65.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;">
                <children>
-                  <Label fx:id="levelLabel" layoutX="28.0" layoutY="33.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Nivel" />
-                  <Label fx:id="scoreLabel" layoutX="28.0" layoutY="82.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Puntaje" />
-                  <Label fx:id="lifeLabel" layoutX="31.0" layoutY="135.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Vida" />
-               </children>
+                        <Label fx:id="levelLabel" layoutX="28.0" layoutY="33.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Nivel" />
+                        <Label fx:id="scoreLabel" layoutX="28.0" layoutY="82.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Puntaje" />
+                        <Label fx:id="lifeLabel" layoutX="28.0" layoutY="130.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Vida" />
+                </children>
                <effect>
                   <DropShadow height="7.0" radius="3.0" width="7.0" />
                </effect></Pane>
@@ -47,9 +46,9 @@
             <DropShadow />
          </effect>
       </Pane>
-        <BorderPane layoutX="245.0" prefHeight="600.0" prefWidth="577.0" style="-fx-background-color: black;">
+        <BorderPane fx:id="backgroundMaze" layoutX="245.0" prefHeight="600.0" prefWidth="577.0" style="-fx-background-color: black;">
             <center>
-               <PacManView fx:id="pacManView" columnCount="19" rowCount="21" />
+                <PacManView fx:id="pacManView" columnCount="19" rowCount="21" />
             </center>
          <top>
             <Pane prefHeight="49.0" prefWidth="577.0" BorderPane.alignment="CENTER">

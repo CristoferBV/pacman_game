@@ -4,6 +4,12 @@ import Controller.Controller;
 import javafx.geometry.Point2D;
 import java.io.*;
 import java.util.*;
+import javafx.geometry.Pos;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BorderPane;
 
 /**
  * FXML Controller class
@@ -19,11 +25,13 @@ public class PacManModel {
         UP, DOWN, LEFT, RIGHT, NONE
     }
     
+    private static final int MAX_LIVES = 6;
     private int rowCount;
     private int columnCount;
     private CellValue[][] grid;
     private int score;
     private int level;
+    private int lives;
     private int dotCount;
     private static boolean gameOver;
     private static boolean youWon;
@@ -38,6 +46,8 @@ public class PacManModel {
     private static Direction currentDirection;
     private static boolean gameStarted = false;
     private static boolean waitingForKeyPress;
+    
+    
 
 
     /**
@@ -151,6 +161,7 @@ public class PacManModel {
         columnCount = 0;
         this.score = 0;
         this.level = 1;
+        this.lives = MAX_LIVES;
         this.initializeLevel(Controller.getLevelFile(0));
     }
 
@@ -160,6 +171,7 @@ public class PacManModel {
     public void startNextLevel() {
         if (this.isLevelComplete()) {
             this.level++;
+            
             rowCount = 0;
             columnCount = 0;
             youWon = false;
@@ -175,6 +187,51 @@ public class PacManModel {
             }
         }
     }
+    
+    // Método para establecer el fondo según el nivel y tamaño personalizado
+    public void setFondo(BorderPane borderPane, int nivel, double width, double height) {
+        Image fondo = null;
+        switch (nivel) {
+            case 1:
+                fondo = new Image("/res/level1.png");
+                break;
+            case 2:
+                fondo = new Image("/res/level2.png");
+                break;
+            case 3:
+                fondo = new Image("/res/level3.png");
+                break;
+            case 4:
+                fondo = new Image("/res/level4.png");
+                break;
+        }
+
+        // Ajustar el tamaño de la imagen al tamaño del BorderPane
+        double originalWidth = fondo.getWidth();
+        double originalHeight = fondo.getHeight();
+        double aspectRatio = originalWidth / originalHeight;
+
+        if (width / height > aspectRatio) {
+            // Si el ancho personalizado es mayor proporcionalmente, ajustar la altura
+            height = width / aspectRatio;
+        } else {
+            // Si la altura personalizada es mayor proporcionalmente, ajustar el ancho
+            width = height * aspectRatio;
+        }
+
+        // Crear un objeto BackgroundImage con la imagen de fondo
+        BackgroundImage backgroundImage = new BackgroundImage(fondo, null, null, null, null);
+
+        // Crear un objeto Background con la imagen de fondo
+        Background background = new Background(backgroundImage);
+
+        // Establecer el fondo en el BorderPane
+        borderPane.setBackground(background);
+
+        // Centrar el contenido en el centro del BorderPane
+        BorderPane.setAlignment(borderPane, Pos.CENTER);
+    }
+
 
     /**
      * Mueva PacMan según la dirección indicada por el usuario (según la entrada del teclado del controlador)
@@ -411,6 +468,21 @@ public class PacManModel {
         }
         ghost2Velocity = new Point2D(-1, 0);
     }
+    
+    /**
+    * Restablece la ubicación de Pac-Man y su dirección a su estado original.
+    */
+    public void sendPacmanHome() {
+        for (int row = 0; row < this.rowCount; row++) {
+            for (int column = 0; column < this.columnCount; column++) {
+                if (grid[row][column] == CellValue.PACMANHOME) {
+                    pacmanLocation = new Point2D(row, column);
+                }
+            }
+        }
+        pacmanVelocity = new Point2D(0, 0); // Puedes ajustar la dirección según lo necesario
+    }
+
 
     /**
      * Actualiza el modelo para reflejar el movimiento de PacMan y los fantasmas y el cambio de estado de cualquier objeto comido.
@@ -449,12 +521,20 @@ public class PacManModel {
             //el juego termina si PacMan es devorado por un fantasma
             else {
                 if (pacmanLocation.equals(ghost1Location)) {
-                    gameOver = true;
-                    pacmanVelocity = new Point2D(0,0);
+                    lives--;
+                    sendPacmanHome();
+                    if(lives == 0){
+                        gameOver = true;
+                        pacmanVelocity = new Point2D(0,0);
+                    } 
                 }
                 if (pacmanLocation.equals(ghost2Location)) {
-                    gameOver = true;
-                    pacmanVelocity = new Point2D(0,0);
+                    lives--;
+                    sendPacmanHome();
+                    if(lives == 0){
+                       gameOver = true;
+                       pacmanVelocity = new Point2D(0,0); 
+                    }   
                 }
             }
             //mueve los fantasmas y comprueba nuevamente si se comen los fantasmas o PacMan (repetir estas comprobaciones ayuda a tener en cuenta los números pares/impares de cuadrados entre los fantasmas y PacMan)
@@ -471,12 +551,20 @@ public class PacManModel {
             }
             else {
                 if (pacmanLocation.equals(ghost1Location)) {
-                    gameOver = true;
-                    pacmanVelocity = new Point2D(0,0);
+                    lives--;
+                    sendPacmanHome();
+                    if(lives == 0){
+                        gameOver = true;
+                        pacmanVelocity = new Point2D(0,0);
+                    } 
                 }
                 if (pacmanLocation.equals(ghost2Location)) {
-                    gameOver = true;
-                    pacmanVelocity = new Point2D(0,0);
+                    lives--;
+                    sendPacmanHome();
+                    if(lives == 0){
+                       gameOver = true;
+                       pacmanVelocity = new Point2D(0,0); 
+                    }   
                 }
             }
             //comienza un nuevo nivel si el nivel está completo
@@ -586,6 +674,14 @@ public class PacManModel {
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
+    public int getLives() {
+        return lives;
     }
     
     /**

@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Cristofer/OneDrive%20-%20Universidad%20Nacional%20de%20Costa%20Rica/Escritorio/Proyectos%20Pacman/Pacman2d/src/Model/PacManModel.java</file>
-            <file>file:/C:/Users/Cristofer/OneDrive%20-%20Universidad%20Nacional%20de%20Costa%20Rica/Escritorio/Proyectos%20Pacman/Pacman2d/src/Model/PacManView.java</file>
-            <file>file:/C:/Users/Cristofer/OneDrive%20-%20Universidad%20Nacional%20de%20Costa%20Rica/Escritorio/Proyectos%20Pacman/Pacman2d/src/Controller/Controller.java</file>
-            <file>file:/C:/Users/Cristofer/OneDrive%20-%20Universidad%20Nacional%20de%20Costa%20Rica/Escritorio/Proyectos%20Pacman/Pacman2d/src/View/pacman.fxml</file>
+            <file>file:/C:/Users/Cristofer/OneDrive%20-%20Universidad%20Nacional%20de%20Costa%20Rica/Escritorio/Proyectos%20Pacman/pacman_game/src/Controller/Controller.java</file>
+            <file>file:/C:/Users/Cristofer/OneDrive%20-%20Universidad%20Nacional%20de%20Costa%20Rica/Escritorio/Proyectos%20Pacman/pacman_game/src/View/pacman.fxml</file>
+            <file>file:/C:/Users/Cristofer/OneDrive%20-%20Universidad%20Nacional%20de%20Costa%20Rica/Escritorio/Proyectos%20Pacman/pacman_game/src/Model/PacManView.java</file>
+            <file>file:/C:/Users/Cristofer/OneDrive%20-%20Universidad%20Nacional%20de%20Costa%20Rica/Escritorio/Proyectos%20Pacman/pacman_game/src/Model/PacManModel.java</file>
         </group>
     </open-files>
 </project-private>

@@ -12,6 +12,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 
 /**
  * FXML Controller class
@@ -26,7 +27,7 @@ public class Controller implements EventHandler<KeyEvent> {
     @FXML private Label gameOverLabel;
     @FXML private Label lifeLabel;
     @FXML private AnchorPane scenePrincipal;
-    @FXML private PacManView pacManView;
+    @FXML private BorderPane backgroundMaze;
     
     
     private static final String[] levelFiles = {
@@ -42,13 +43,15 @@ public class Controller implements EventHandler<KeyEvent> {
         "src/levels/level10.txt"
     };
     
+    @FXML
+    private PacManView pacManView;
     private PacManModel pacManModel;
     private Timer timer;
     private static int ghostEatingModeCounter;
     private boolean paused;
     
-
-
+    
+    
     public Controller() {
         this.paused = false;
     }
@@ -62,6 +65,8 @@ public class Controller implements EventHandler<KeyEvent> {
         this.update(PacManModel.Direction.NONE);
         ghostEatingModeCounter = 25;
         this.startTimer();
+        
+        //pacManModel.setFondo(backgroundMaze, pacManModel.getLevel(), 577, 600);
         
         // Establecer restricciones de tamaño para el BorderPane
         AnchorPane.setTopAnchor(scenePrincipal, 0.0);
@@ -99,7 +104,8 @@ public class Controller implements EventHandler<KeyEvent> {
         this.pacManView.update(pacManModel);
         this.scoreLabel.setText(String.format("Score: %d", this.pacManModel.getScore()));
         this.levelLabel.setText(String.format("Level: %d", this.pacManModel.getLevel()));
-        //this.lifeLabel.setText(String.format("Life: %d", this.pacManModel.getLife()));
+        this.lifeLabel.setText(String.format("Lives: %d", this.pacManModel.getLives()));
+        
         if (pacManModel.isGameOver()) {
             this.gameOverLabel.setText(String.format("GAME OVER"));
             pause();
