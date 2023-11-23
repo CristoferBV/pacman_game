@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="escenaPrincipal" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InstruccionesController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: linear-gradient(#F8BF05, #e74c3c);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane layoutX="550.0" layoutY="101.0" prefHeight="413.0" prefWidth="395.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <Label layoutX="151.0" layoutY="14.0" text="Botones ">
+                     <font>
+                        <Font name="Consolas Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="320.0" fitWidth="200.0" layoutX="11.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../res/Botones.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="220.0" layoutY="93.0" prefHeight="17.0" prefWidth="179.0" text="Reinicia el juego si lo ">
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="220.0" layoutY="108.0" text="desea el usuario dandole ">
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="220.0" layoutY="123.0" text="clic al botón.">
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="220.0" layoutY="178.0" prefHeight="17.0" prefWidth="141.0" text="Permite empezar el">
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="220.0" layoutY="191.0" prefHeight="17.0" prefWidth="141.0" text="inicio del juego.">
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="220.0" layoutY="331.0" prefHeight="17.0" prefWidth="141.0" text="Permite salir de la">
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="220.0" layoutY="345.0" prefHeight="17.0" prefWidth="133.0" text="la aplicación.">
+                     <font>
+                        <Font name="Consolas Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <ToggleButton layoutX="47.0" layoutY="549.0" mnemonicParsing="false" onAction="#volver" styleClass="toggleButtonVolver" stylesheets="@../Other/menuGame.css" text="VOLVER">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ToggleButton>
+            <Label layoutX="390.0" layoutY="25.0" text="Instrucciones" textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="31.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="45.0" layoutY="100.0" prefHeight="413.0" prefWidth="395.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Label layoutX="120.0" layoutY="14.0" text="Movimientos">
+               <font>
+                  <Font name="Consolas Bold" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="57.0" fitWidth="127.0" layoutX="23.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/flecha-correcta.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="127.0" layoutX="23.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/flecha-izquierda.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="127.0" layoutX="23.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/flecha-hacia-abajo.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="127.0" layoutX="23.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../res/flecha-hacia-arriba.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="112.0" layoutY="86.0" prefHeight="17.0" prefWidth="262.0" text="Con la tecla derecha se mueve hacia">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="107.0" prefHeight="17.0" prefWidth="160.0" text="la derecha el pacman.">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="155.0" prefHeight="17.0" prefWidth="270.0" text="Con la tecla izquierda se mueve hacia">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="176.0" prefHeight="17.0" prefWidth="179.0" text="la izquierda el pacman.">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="241.0" prefHeight="17.0" prefWidth="244.0" text="Con la tecla abajo se mueve hacia">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="262.0" prefHeight="17.0" prefWidth="179.0" text="abajo el pacman.">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="334.0" prefHeight="17.0" prefWidth="244.0" text="Con la tecla arriba se mueve hacia">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="112.0" layoutY="355.0" prefHeight="17.0" prefWidth="179.0" text="arriba el pacman.">
+               <font>
+                  <Font name="Consolas Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

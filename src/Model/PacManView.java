@@ -12,7 +12,7 @@ import Model.PacManModel.CellValue;
  * @author Cristofer
  */
 public class PacManView extends Group {
-    public final static double CELL_WIDTH = 20.0;
+    public final static double CELL_WIDTH = 24.0;
 
     private int rowCount;
     private int columnCount;

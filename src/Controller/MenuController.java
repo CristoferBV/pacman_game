@@ -45,7 +45,9 @@ public class MenuController implements Initializable {
     }
 
     @FXML
-    private void instructionsGame(ActionEvent event) throws IOException {  
+    private void instructionsGame(ActionEvent event) throws IOException {
+        Main.Close((Stage) escenaPrincipal.getScene().getWindow());
+        Main.setRoot("/View/Instrucciones", 1000, 600);
     }
 
     @FXML
