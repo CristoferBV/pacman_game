@@ -278,7 +278,7 @@ public class PacManModel {
     }
 
     /**
-     * Mueve los fantasmas para seguir a PacMan según lo establecido en el método moveAGhost()
+     * Mueve los fantasmas para seguir a PacMan según lo establecido en el método moverUnFantasma()
      */
     public void moverFantasmas() {
         if (gameStarted && !waitingForKeyPress) {

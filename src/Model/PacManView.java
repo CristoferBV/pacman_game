@@ -47,7 +47,7 @@ public class PacManView extends Group {
     /**
      * Construye una cuadrícula vacía de ImageViews
      */
-    private void initializeGrid() {
+    private void initializeGrid() { //Laberinto
         if (this.rowCount > 0 && this.columnCount > 0) {
             this.cellViews = new ImageView[this.rowCount][this.columnCount];
             for (int row = 0; row < this.rowCount; row++) {

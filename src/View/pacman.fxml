@@ -14,9 +14,9 @@
          <children>
             <Pane layoutX="21.0" layoutY="65.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;">
                <children>
-                        <Label fx:id="levelLabel" layoutX="28.0" layoutY="33.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Nivel" />
-                        <Label fx:id="scoreLabel" layoutX="28.0" layoutY="82.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Puntaje" />
-                        <Label fx:id="lifeLabel" layoutX="28.0" layoutY="130.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 26; -fx-text-fill: black" text="Vida" />
+                        <Label fx:id="levelLabel" layoutX="5.0" layoutY="33.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 24; -fx-text-fill: black" text="Nivel" />
+                        <Label fx:id="scoreLabel" layoutX="5.0" layoutY="82.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 24; -fx-text-fill: black" text="Puntaje" />
+                        <Label fx:id="lifeLabel" layoutX="5.0" layoutY="130.0" style="-fx-font-family: 'Consolas'; -fx-font-size: 24; -fx-text-fill: black" text="Vida" />
                 </children>
                <effect>
                   <DropShadow height="7.0" radius="3.0" width="7.0" />

@@ -157,9 +157,6 @@ public class Controller implements EventHandler<KeyEvent> {
             case DOWN:
                 direction = PacManModel.Direction.DOWN;
                 break;
-            case G:
-                restablecerGameLogic();
-                break;
             default:
                 keyRecognized = false;
                 break;
