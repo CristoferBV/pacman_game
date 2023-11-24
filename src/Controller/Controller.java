@@ -102,16 +102,16 @@ public class Controller implements EventHandler<KeyEvent> {
     private void actualizar(PacManModel.Direction direction) {
         this.pacManModel.paso(direction);
         this.pacManView.actualizar(pacManModel);
-        this.scoreLabel.setText(String.format("Score: %d", this.pacManModel.getScore()));
-        this.levelLabel.setText(String.format("Level: %d", this.pacManModel.getLevel()));
-        this.lifeLabel.setText(String.format("Lives: %d", this.pacManModel.getLives()));
+        this.scoreLabel.setText(String.format("Puntaje: %d", this.pacManModel.getScore()));
+        this.levelLabel.setText(String.format("Nivel: %d", this.pacManModel.getLevel()));
+        this.lifeLabel.setText(String.format("Vida: %d", this.pacManModel.getLives()));
         
         if (pacManModel.isGameOver()) {
-            this.gameOverLabel.setText(String.format("GAME OVER"));
+            this.gameOverLabel.setText(String.format("PERDISTE!"));
             pause();
         }
         if (pacManModel.isYouWon()) {
-            this.gameOverLabel.setText(String.format("YOU WON!"));
+            this.gameOverLabel.setText(String.format("GANASTE!"));
         }
         //cuando PacMan está en modo GhostEatingMode, cuenta regresiva el GhostEatingModeCounter para restablecer GhostEatingMode a falso cuando el contador es 0.
         if (pacManModel.isGhostEatingMode()) {
